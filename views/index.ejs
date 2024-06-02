@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login with Google</title>
+  <script>
+    window.addEventListener('message', (event) => {
+      if (event.data === 'authenticated') {
+        window.location.href = '/profile';
+      }
+    }, false);
+
+    function openPopup() {
+      window.open('/auth/google', 'GoogleAuth', 'width=500,height=500');
+    }
+  </script>
+</head>
+<body>
+  <% if (user) { %>
+    <p>Hello, <%= user.name %></p>
+    <a href="/profile">View Profile</a>
+    <a href="/logout">Logout</a>
+  <% } else { %>
+    <button onclick="openPopup()">Login with Google</button>
+  <% } %>
+</body>
+</html>

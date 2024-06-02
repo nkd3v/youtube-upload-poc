@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Upload Video</title>
+</head>
+<body>
+  <h1>Upload Video</h1>
+  <form action="/upload" method="post" enctype="multipart/form-data">
+    <div>
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" required>
+    </div>
+    <div>
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" required></textarea>
+    </div>
+    <div>
+      <label for="video">Video:</label>
+      <input type="file" id="video" name="video" accept="video/*" required>
+    </div>
+    <div>
+      <button type="submit">Upload</button>
+    </div>
+  </form>
+  <a href="/profile">Back to Profile</a>
+</body>
+</html>
